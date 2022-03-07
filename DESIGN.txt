@@ -1,0 +1,20 @@
+executeAction and executeAnimationAction(Entity)
+ could be used by either Entity or EvenScheduler due to using both as parameters and they both manipulate an entity and
+ and is in a way a scheduled event. Moved to Entity do to using a lot of instance variables from it, meaning less moving
+
+distanceSquared and nearestEntity (WorldModel)
+ distanceSquared acts like a generic math function and nearestEntity is the only one which uses
+ it, findNearest was moved to WorldModel however making WorldModel the only class which calls the above
+ thus moved to WorldModel to act as a helper
+
+getNumFromRange (Entity)
+ this is a generic math function but only used by Entity so moved to act as a helper
+
+clamp (Functions)
+ another math function only used by Worldview so moved to be a helper
+
+parse load creates (Functions)
+ somewhat generic and not belonging to any one class
+
+setAlpha, getImages (Functions)
+ used only by the functions right above so same reason as the above
